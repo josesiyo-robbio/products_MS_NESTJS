@@ -19,7 +19,11 @@ model Product {
   name String
   price Float
 
+  available Boolean @default(true)
+
 
   createAt DateTime @default(now())
   updateAt DateTime @updatedAt
+
+  @@index([available])
 }
