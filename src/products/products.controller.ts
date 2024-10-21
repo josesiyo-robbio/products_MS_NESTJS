@@ -19,7 +19,7 @@ export class ProductsController
   @Get()
   findAll(@Query() paginationDto : PaginationDto) 
   {
-    return paginationDto;
+    return this.productsService.findAll(paginationDto);
   }
 
 
@@ -34,7 +34,7 @@ export class ProductsController
     return this.productsService.update(+id, updateProductDto);
   }
 
-  
+
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.productsService.remove(+id);
